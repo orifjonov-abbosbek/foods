@@ -1,0 +1,35 @@
+
+.nav-list{
+    width: 300px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.nav{
+    display: flex;
+ 
+    align-items: center;
+}
+.nav-item-link{
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    opacity: 0.5;
+    font-size: 20px;
+    font-weight: 6  00;
+    cursor: pointer;
+}
+.nav-item-link:hover{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
