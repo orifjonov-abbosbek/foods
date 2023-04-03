@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
+
 const All = () => {
-  const API_PATH = "https://themealdb.com/api/json/v1/1/search.php?s=";
+  const [name, setName] = React.useState("");
+  const [data, setData] = React.useState([]);
   const [meals, setMeals] = React.useState([]);
+
+  const API_PATH = "https://themealdb.com/api/json/v1/1/search.php?s=";
+
   const fetchData = async () => {
     try {
       const response = await fetch(API_PATH);
       const data = await response.json();
-      setMeals(data.meals);
+      setMeals(data.meals.slice(0, 18));
     } catch (error) {
       console.error(error);
     }
@@ -15,6 +20,20 @@ const All = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const handleSearch = async (event) => {
+    event.preventDefault();
+
+    try {
+      const res = await fetch(
+        `https://themealdb.com/api/json/v1/1/search.php?s=${name}`
+      );
+      const data = await res.json();
+      setData(data.meals);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -29,9 +48,25 @@ const All = () => {
         >
           Menu
         </h2>
+
+        <div className="row">
+          <form className="d-flex gap-2" onChange={handleSearch}>
+            <input
+              onChange={(event) => setName(event.target.value)}
+              className="form-control"
+              type="text"
+              placeholder="Type..."
+              value={name}
+            />
+            <button className="btn btn-secondary" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+
         <div className="meals-wrapper w-70 d-flex flex-wrap gap-5 justify-content-center mt-5">
-          {meals.map((data) => (
-            <div className="card" style={{ width: "18rem" }}>
+          {(name === "" ? meals : data).map((data) => (
+            <div className="card" style={{ width: "18rem" }} key={data.idMeal}>
               <img
                 className="card-img-top"
                 src={data.strMealThumb}

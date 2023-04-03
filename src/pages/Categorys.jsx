@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Back from '../assets/back.svg'
 
 const Categorys = () => {
   const [data, setData] = useState([]);
@@ -20,13 +21,13 @@ const Categorys = () => {
           onClick={() => navigate("/categories")}
           style={{ fontSize: "30px", color: "white", cursor: "pointer" }}
         >
-          ⌫
+          <img src={Back} alt="" />
         </span>
         <h1 style={{ color: "white" }}>{categorys} - taomlar</h1>
       </div>
       <div className="meals-wrapper w-70 d-flex flex-wrap gap-4 justify-content-center mt-5">
         {data?.meals?.map((data) => (
-          <Link to={`/categories/${categorys}/${data.idMeal}`}>
+          <Link style={{textDecoration:'none', color: '#000'}} to={`/categories/${categorys}/${data.idMeal}`}>
             <div
               className="card cursor-pointer"
               style={{ width: "18rem", cursor: "pointer" }}

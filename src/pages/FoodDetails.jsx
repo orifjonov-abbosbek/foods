@@ -15,17 +15,28 @@ const FoodDetails = () => {
 
   return (
     <div className="container">
-      <h4 className="text-light">{id} - idlik Taom</h4>
-      <div className="card">
-        <div className="d-flex text-black">
-          <img
-            className="card-img-top"
-            src={data.strMealThumb}
-            alt="Card image cap"
-          />
-          <div className="card-body">
-            <h2>{data.strMeal}</h2>
-            {/* <h6 className="card-title">Name: {data.strMeal.slice(0, 20)}...</h6> */}
+      <div className="row justify-content-center pb-5">
+        <div className="col-6 ">
+          <h4 className="text-light">{data.strMeal}</h4>
+          <div className="card d-flex">
+            <div className="text-black">
+              <img
+                className="card-img-top d-block"
+                src={data.strMealThumb}
+                alt="Card image cap"
+                height={400}
+              />
+            </div>
+            <div className="card-body text-black">
+              <p>Category: {data.strCategory}</p>
+              <p>Country: {data.strArea}</p>
+              <details>
+                <summary>Instruction</summary>
+                <p style={{ fontSize: "12px", fontStyle: "italic" }}>
+                  Instruction: {data.strInstructions}
+                </p>
+              </details>
+            </div>
           </div>
         </div>
       </div>
