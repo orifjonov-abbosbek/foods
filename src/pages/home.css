@@ -1,0 +1,29 @@
+.home-wrapper {
+  padding-top: 100px;
+  padding-bottom: 400px;
+  background-image: url("../assets/homebg.png");
+  background-repeat: no-repeat;
+  background-position: calc(50% + 300px) calc(50% - 50px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-title {
+  width: 400px;
+  color: #ccc;
+  font-size: 60px;
+}
+.home-contact {
+  width: 120px;
+  height: 48px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 10px;
+  color: black;
+
+}
+
+.home-contact:hover{
+    background-color: #000 ;
+    color: #ccc ;
+}

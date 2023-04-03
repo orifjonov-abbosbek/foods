@@ -1,0 +1,8 @@
+.list-group-item{
+    background-color: #161616;
+    color: #ccc;
+}
+.list-group-item:hover{
+    background-color: #fff;
+    color:  black;
+}
