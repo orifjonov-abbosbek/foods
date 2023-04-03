@@ -22,16 +22,18 @@
   align-items: center;
 }
 .nav-item-link {
-  padding: 5px;
+  padding: 10px 15px;
   text-decoration: none;
   color: #ccc;
   opacity: 0.5;
   font-size: 20px;
-  font-weight: 6 00;
+  font-weight: 600;
   cursor: pointer;
 }
+
 .nav-item-link:hover {
-  background-color: #ccc;
-  color: #332f2f;
-  border-radius: 10px;
+  background-color: #5c5c5c;
+  color: white;
+  opacity: 1;
+  border-radius: 6px;
 }

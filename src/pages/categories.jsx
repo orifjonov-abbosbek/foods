@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import './categories.css'
+import "./categories.css";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -27,15 +27,17 @@ const Categories = () => {
         <div className="container">
           <div className="category-wrapper mt-3">
             {categories.map((category) => (
-              <div className="list-group d-flex list-item-link" key={category.idCategory}>
+              <div
+                className="list-group d-flex list-item-link"
+                key={category.idCategory}
+              >
                 <Link
-                  to="/bycategories"
+                  to={`/categories/${category.strCategory.toLowerCase()}`}
                   className="list-group-item  mb-2"
-                  
                 >
                   {category.idCategory} {category.strCategory}
                 </Link>
-              </div>    
+              </div>
             ))}
           </div>
         </div>
