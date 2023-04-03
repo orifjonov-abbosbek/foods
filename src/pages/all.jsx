@@ -55,7 +55,7 @@ const All = () => {
               onChange={(event) => setName(event.target.value)}
               className="form-control"
               type="text"
-              placeholder="Type..."
+              placeholder="Search your lovely food..."
               value={name}
             />
             <button className="btn btn-secondary" type="submit">

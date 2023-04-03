@@ -1,0 +1,11 @@
+@media only screen and (max-width: 375px) {
+  .card-wrapper {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 771px) {
+  .card-wrapper {
+    width: 90%;
+  }
+}

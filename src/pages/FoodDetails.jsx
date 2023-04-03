@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import './fooddetails.css'
 
 const FoodDetails = () => {
   const { id } = useParams();
@@ -16,7 +17,7 @@ const FoodDetails = () => {
   return (
     <div className="container">
       <div className="row justify-content-center pb-5">
-        <div className="col-6 ">
+        <div className="card-wrapper col-6 ">
           <h4 className="text-light">{data.strMeal}</h4>
           <div className="card d-flex">
             <div className="text-black">
